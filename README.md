@@ -44,6 +44,6 @@ Este projeto tem como objetivo automatizar o processo de envio de solicitações
 3. Após o login, o script vai pedir um filtro de pessoas que você deseja filtrar (exemplo: "python") e automaticamente irá para a página de busca de pessoas e começará a enviar solicitações de conexão com a mensagem personalizada.
 
 ## Personalização
-Você pode personalizar a mensagem que será enviada com cada solicitação de conexão. No script Linkedin.py, edite a variável mensagem dentro do loop principal:
+Você pode personalizar a mensagem que será enviada com cada solicitação de conexão. No script Linkedin.py linha 70, edite a variável mensagem dentro do loop principal:
    ```bash
    mensagem = f"Olá {nome}, me chamo Daniel e sou programador Python também. Adoraria me conectar para compartilhar conhecimentos e oportunidades. Obrigado!"
