@@ -35,7 +35,7 @@ Este projeto tem como objetivo automatizar o processo de envio de solicitações
    ```bash
    options.add_argument("user-data-dir=C:/Users/Seu usuário/AppData/Local/Google/Chrome/User Data/Profile Selenium")
 
-# Uso
+## Uso
 1. Navegue até o diretório do projeto (use o comando cd "diretório do projeto") e execute o script:
    ```bash
    python Linkedin.py
