@@ -75,19 +75,23 @@ while True:
                 botao_enviar = driver.find_element(By.XPATH, '/html/body/div[3]/div/div/div[4]/button[2]')
                 botao_enviar.click()
                 time.sleep(2)
+                if len(driver.find_elements(By.CLASS_NAME, "ip-fuse-limit-alert__primary-action")) == 1:
+                    time.sleep(1)
+                    driver.find_element(By.CLASS_NAME, "ip-fuse-limit-alert__primary-action").click()
+                    time.sleep(1)
+                else:
+                    time.sleep(1)
+                    pass
         except:
             print("Erro ao processar conexões")
             continue
 
     driver.execute_script("window.scrollTo(0, 1600)")
     # Verificar se há o botão de próxima página
-    botao_avancar = driver.find_elements(By.CLASS_NAME, "artdeco-pagination__button--next")
-
-    if len(botao_avancar) == 1:
-        botao_avancar[0].click()
-        time.sleep(3)
-    else:
+    if driver.find_elements(By.CLASS_NAME, "artdeco-button--disabled"):
         print("Última página")
-        break
+    else:
+        driver.find_element(By.CLASS_NAME, "artdeco-pagination__button--next").click()
+        time.sleep(3)
 
 driver.quit()
