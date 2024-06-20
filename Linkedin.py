@@ -87,6 +87,7 @@ while True:
             continue
 
     driver.execute_script("window.scrollTo(0, 1600)")
+    
     # Verificar se há o botão de próxima página
     botoes = driver.find_elements(By.CLASS_NAME, "artdeco-pagination__button")
     botao_avancar = botoes[-1]
