@@ -88,10 +88,12 @@ while True:
 
     driver.execute_script("window.scrollTo(0, 1600)")
     # Verificar se há o botão de próxima página
-    if driver.find_elements(By.CLASS_NAME, "artdeco-button--disabled"):
+    botoes = driver.find_elements(By.CLASS_NAME, "artdeco-pagination__button")
+    botao_avancar = botoes[-1]
+
+    if botao_avancar.get_attribute("disabled"):
         print("Última página")
     else:
-        driver.find_element(By.CLASS_NAME, "artdeco-pagination__button--next").click()
-        time.sleep(3)
+        botao_avancar.click()
 
 driver.quit()
